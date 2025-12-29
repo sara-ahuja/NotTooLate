@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onboarding – NotTooLate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Your Details</h2>
+
+    <form method="POST">
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Biological Sex</label>
+        <select name="sex">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Activity Level</label>
+        <select name="activity">
+            <option>Sedentary</option>
+            <option>Walking only</option>
+            <option>Occasionally active</option>
+        </select>
+
+        <label>Time Available (minutes)</label>
+        <select name="time">
+            <option>15</option>
+            <option>30</option>
+            <option>45</option>
+        </select>
+
+        <label>Equipment Access</label>
+        <select name="equipment">
+            <option>None</option>
+            <option>Dumbbells</option>
+            <option>Gym access</option>
+        </select>
+
+        <label>Injury History (optional)</label>
+        <textarea name="injuries"></textarea>
+
+        <button type="submit">Generate Plan</button>
+    </form>
+</div>
+<script>
+(function () {
+    const root = document.documentElement;
+
+    // Apply saved theme on load
+    if (localStorage.getItem("theme") === "dark") {
+        root.classList.add("dark");
+    }
+
+    // Expose toggle globally
+    window.toggleTheme = function () {
+        root.classList.toggle("dark");
+        localStorage.setItem(
+            "theme",
+            root.classList.contains("dark") ? "dark" : "light"
+        );
+    };
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NotTooLate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Theme toggle -->
+    <div style="display:flex; justify-content:flex-end;">
+        <button onclick="toggleTheme()" style="width:auto; padding:8px 14px; font-size:14px;">
+            Toggle Theme
+        </button>
+    </div>
+
+    <!-- Hero -->
+    <h2>NotTooLate</h2>
+
+    <p style="font-size:18px; margin-top:20px; text-align:center;">
+        After age 30, muscle and bone loss accelerates.<br>
+        Cardio alone is not enough.
+    </p>
+
+    <p style="font-size:18px; font-weight:600; margin-top:10px; text-align:center;">
+        Strength decline is preventable.
+    </p>
+
+    <!-- WHY CARD -->
+    <div class="card info">
+        <h3>Why “NotTooLate”?</h3>
+        <p>
+            From your 30s onward, muscle strength, balance, and bone density
+            decline quietly — increasing injury and loss of independence.
+        </p>
+        <p>
+            Walking supports heart health, but it does not preserve strength.
+            Structured resistance training does.
+        </p>
+        <p>
+            The good news: it is never too late to slow, stop, or reverse this decline.
+        </p>
+    </div>
+
+    <!-- WHAT YOU GET CARD -->
+    <div class="card success">
+        <h3>What You Get</h3>
+        <ul>
+            <li>A personalized strength plan based on age, time, and limitations</li>
+            <li>A clear progression from beginner to confident movement</li>
+            <li>Simple explanations so you understand why each exercise matters</li>
+        </ul>
+    </div>
+
+    <!-- CTA -->
+    <a href="/onboarding">
+        <button>Generate My Plan</button>
+    </a>
+
+</div>
+<script>
+(function () {
+    const root = document.documentElement;
+
+    // Apply saved theme on load
+    if (localStorage.getItem("theme") === "dark") {
+        root.classList.add("dark");
+    }
+
+    // Expose toggle globally
+    window.toggleTheme = function () {
+        root.classList.toggle("dark");
+        localStorage.setItem(
+            "theme",
+            root.classList.contains("dark") ? "dark" : "light"
+        );
+    };
+})();
+</script>
+
+</body>
+</html>

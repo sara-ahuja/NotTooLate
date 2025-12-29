@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Plan – NotTooLate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Your Personalized Strength Plan</h2>
+
+    <div class="card info">
+        <h3>User Summary</h3>
+        <ul>
+            <li>Age: {{ user.age }}</li>
+            <li>Sex: {{ user.sex }}</li>
+            <li>Activity Level: {{ user.activity }}</li>
+            <li>Time Available: {{ user.time }} minutes</li>
+            <li>Equipment: {{ user.equipment }}</li>
+        </ul>
+    </div>
+
+   <div class="card success">
+    <h3>Week 1 Strength Plan</h3>
+    <div class="plan-content">
+        {{ plan | safe }}
+    </div>
+</div>
+
+<div class="card warning">
+
+    <h3>Why This Plan Works</h3>
+    <p>
+        This plan is designed to preserve muscle mass, improve bone density,
+        and reduce injury risk through low-impact, progressive strength training.
+        Exercises are chosen to be joint-friendly and achievable for beginners.
+    </p>
+</div>
+
+<div class="card accent">
+    <h3>Progression Preview</h3>
+    <p>
+        Over time, repetitions, resistance, or difficulty can be increased
+        gradually to continue improving strength and functional capacity.
+    </p>
+</div>
+
+
+
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+</div>
+<script>
+(function () {
+    const root = document.documentElement;
+
+    // Apply saved theme on load
+    if (localStorage.getItem("theme") === "dark") {
+        root.classList.add("dark");
+    }
+
+    // Expose toggle globally
+    window.toggleTheme = function () {
+        root.classList.toggle("dark");
+        localStorage.setItem(
+            "theme",
+            root.classList.contains("dark") ? "dark" : "light"
+        );
+    };
+})();
+</script>
+
+
+</body>
+</html>

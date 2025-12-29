@@ -1,0 +1,184 @@
+:root {
+    /* Core */
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-soft: #e5e7eb;
+
+    /* Accent */
+    --primary: #4f7cff;
+    --primary-dark: #3b66e3;
+
+    /* Card themes (LIGHT MODE) */
+    --card-info-bg: #eef4ff;
+    --card-info-border: #4f7cff;
+
+    --card-success-bg: #eefaf3;
+    --card-success-border: #2bb673;
+
+    --card-warning-bg: #fff8e6;
+    --card-warning-border: #f1c40f;
+
+    --card-accent-bg: #fff2e8;
+    --card-accent-border: #f39c12;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.container {
+    max-width: 780px;
+    width: 90%;
+    background: var(--card);
+    padding: 40px;
+    margin: 60px auto;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.plan-content {
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+/* Forms */
+label {
+    font-weight: 500;
+    margin-top: 18px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79,124,255,0.15);
+}
+
+textarea {
+    height: 80px;
+}
+
+/* Buttons */
+button {
+    margin-top: 30px;
+    padding: 14px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(79,124,255,0.35);
+}
+
+/* Cards */
+.card {
+    margin-top: 30px;
+    padding: 28px;
+    border-radius: 18px;
+    background: var(--card);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card.info {
+    background: var(--card-info-bg);
+    border-left: 6px solid var(--card-info-border);
+}
+
+.card.success {
+    background: var(--card-success-bg);
+    border-left: 6px solid var(--card-success-border);
+}
+
+.card.warning {
+    background: var(--card-warning-bg);
+    border-left: 6px solid var(--card-warning-border);
+}
+
+.card.accent {
+    background: var(--card-accent-bg);
+    border-left: 6px solid var(--card-accent-border);
+}
+
+/* Plan content */
+.plan-content {
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+/* Lists */
+ul {
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ===============================
+   DARK / VIOLET MODE (FINAL)
+   =============================== */
+
+html.dark {
+    --bg: #0f1220;
+    --card: #171a2b;
+    --text-main: #e5e7eb;
+    --text-muted: #a1a1aa;
+    --border-soft: #2a2e45;
+
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+
+    --card-info-bg: #1a1f3a;
+    --card-info-border: #8b5cf6;
+
+    --card-success-bg: #152b23;
+    --card-success-border: #34d399;
+
+    --card-warning-bg: #2a2414;
+    --card-warning-border: #facc15;
+
+    --card-accent-bg: #2b1e17;
+    --card-accent-border: #fb923c;
+}
+

@@ -1,0 +1,10 @@
+nottoolate/
+├── app.py
+├── services/
+│   └── ai_engine.py
+├── templates/
+│   ├── index.html
+│   ├── onboarding.html
+│   └── plan.html
+└── static/
+    └── style.css
